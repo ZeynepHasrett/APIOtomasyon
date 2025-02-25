@@ -10,29 +10,30 @@ public class P01_GET_apiTest {
     /*
         https://restful-booker.herokuapp.com/booking/10 url’ine
         bir GET request gonderdigimizde donen Response’un,
-        status code’unun 200,
-        ve content type’inin application/json; charset=utf-8,
-        ve Server isimli Header’in degerinin Cowboy,
-        ve status Line’in HTTP/1.1 200 OK
-        ve response suresinin 5 sn’den kisa oldugunu manuel olarak test ediniz.
+            status code’unun 200,
+            ve content type’inin application/json; charset=utf-8,
+            ve Server isimli Header’in degerinin Cowboy,
+            ve status Line’in HTTP/1.1 200 OK
+            ve response suresinin 5 sn’den kisa
+        oldugunu manuel olarak test ediniz.
      */
 
     /*
         Tum API sorgulari 4 asamada yapilir:
 
-            1- EndPoint hazirlanir (url ve VARSA (PUT-POST-PATCH) request body hazirlanir.
-            2- Soruda verilmisse expected data hazirlanir. Verilmemisse hazirlanmaz
-            3- Donen cevap kaydedilir
-            4- Assertion islemleri yapilir
+            1- EndPoint hazirlanir, url ve VARSA (PUT-POST-PATCH) request body hazirlanir.
+            2- Soruda verilmis ise expected data hazirlanir.
+            3- Donen cevap kaydedilir.
+            4- Assertion islemleri yapilir.
      */
 
     @Test
-    public void test01(){
+    public void test01() {
 
         // 1- EndPoint hazirlanir
         String url = "https://restful-booker.herokuapp.com/booking/10";
 
-        // 2- Soruda verilmisse expected data hazirlanir. Verilmemisse hazirlanmaz
+        // 2- Soruda verilmisse expected data hazirlanir
         // Soruda verilmemis
 
         // 3- Donen cevap kaydedilir
