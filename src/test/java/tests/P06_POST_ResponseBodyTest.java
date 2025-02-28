@@ -2,8 +2,6 @@ package tests;
 
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
-import io.restassured.specification.RedirectSpecification;
-import org.hamcrest.Matchers;
 import org.json.JSONObject;
 import org.junit.jupiter.api.Test;
 
