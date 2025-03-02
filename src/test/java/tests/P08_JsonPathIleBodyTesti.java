@@ -2,10 +2,12 @@ package tests;
 
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
+import org.hamcrest.Matchers;
 import org.json.JSONObject;
 import org.junit.jupiter.api.Test;
 
 import static io.restassured.RestAssured.given;
+import static org.hamcrest.Matchers.*;
 
 public class P08_JsonPathIleBodyTesti {
 
@@ -61,6 +63,17 @@ public class P08_JsonPathIleBodyTesti {
                             .post(url);
 
         response.prettyPrint();
+
+        response.then().assertThat()
+                                    .statusCode(200)
+                                    .contentType("application/json")
+                                    .body("booking.firstname", equalTo("Ahmet"),
+                                            "booking.lastname", equalTo("Bulut"),
+                                            "booking.totalprice", equalTo(500),
+                                            "booking.depositpaid", equalTo(false),
+                                            "booking.bookingdates. checkin", equalTo("2021-06-01"),
+                                            "booking.bookingdates. checkout", equalTo("2021-06-10"),
+                                            "booking.additionalneeds", equalTo("wi-fi"));
 
     }
 

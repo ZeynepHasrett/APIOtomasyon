@@ -32,13 +32,14 @@ public class P07_BodyTekrarindanKurtulma {
 
         Response response = given().when().get(url);
 
-        response.then().assertThat().statusCode(200)
-                .contentType("application/json; charset=utf-8")
-                .body("firstname", equalTo("Doc James"),
-                        "lastname", equalTo("Brown"),
-                        "totalprice", equalTo(111),
-                        "depositpaid", equalTo(true),
-                        "additionalneeds", equalTo("Breakfast"));
+        response.then().assertThat()
+                                    .statusCode(200)
+                                    .contentType("application/json; charset=utf-8")
+                                    .body("firstname", equalTo("Doc James"),
+                                            "lastname", equalTo("Brown"),
+                                            "totalprice", equalTo(111),
+                                            "depositpaid", equalTo(true),
+                                            "additionalneeds", equalTo("Breakfast"));
 
     }
 
