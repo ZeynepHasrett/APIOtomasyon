@@ -9,6 +9,7 @@ import org.testng.Assert;
 
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.*;
+import static org.testng.AssertJUnit.*;
 
 public class P09_ExpectedDataOlusturma {
 
@@ -47,10 +48,10 @@ public class P09_ExpectedDataOlusturma {
 
         JsonPath resJP = response.jsonPath();
 
-        Assert.assertEquals(expData.get("userId"), resJP.get("userId"));
-        Assert.assertEquals(expData.get("id"), resJP.get("id"));
-        Assert.assertEquals(expData.get("title"), resJP.get("title"));
-        Assert.assertEquals(expData.get("body"), resJP.get("body"));
+        assertEquals(expData.get("userId"), resJP.get("userId"));
+        assertEquals(expData.get("id"), resJP.get("id"));
+        assertEquals(expData.get("title"), resJP.get("title"));
+        assertEquals(expData.get("body"), resJP.get("body"));
 
     }
 
