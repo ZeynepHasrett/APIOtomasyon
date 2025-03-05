@@ -4,10 +4,8 @@ import baseUrl.JPH_baseUrl;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import org.json.JSONObject;
-import org.junit.jupiter.api.Assertions;
 import org.testng.annotations.Test;
-import org.testng.asserts.Assertion;
-import testDatas.JPHDatas;
+import testDatas.JPHTestDatas;
 
 import static io.restassured.RestAssured.given;
 import static org.testng.AssertJUnit.*;
@@ -34,7 +32,7 @@ public class P16_TestDataClassKullanimi extends JPH_baseUrl {
 
         specJPH.pathParams("pp1", "posts", "pp2", 22);
 
-        JSONObject expData = JPHDatas.expectedDataOlustur();
+        JSONObject expData = JPHTestDatas.expectedDataOlusturJSON();
 
         Response response = given().spec(specJPH).when().get("/{pp1}/{pp2}");
 
@@ -42,7 +40,7 @@ public class P16_TestDataClassKullanimi extends JPH_baseUrl {
 
         JsonPath respJP = response.jsonPath();
 
-        assertEquals(JPHDatas.basariliStatusCode, response.getStatusCode());
+        assertEquals(JPHTestDatas.basariliStatusCode, response.getStatusCode());
         assertEquals(expData.get("userId"), respJP.getInt("userId"));
         assertEquals(expData.get("id"), respJP.getInt("id"));
         assertEquals(expData.get("title"), respJP.getString("title"));

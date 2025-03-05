@@ -2,13 +2,12 @@ package tests;
 
 import baseUrl.JPH_baseUrl;
 import io.restassured.response.Response;
-import org.hamcrest.Matchers;
 import org.testng.annotations.Test;
 
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.*;
 
-public class P12_baseUrl_JPH extends JPH_baseUrl {
+public class P12_BaseUrl_JPH extends JPH_baseUrl {
 
 
     /*

@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 
 import static io.restassured.RestAssured.given;
 
-public class P01_GET_apiTest {
+public class P01_GET_ApiTest {
 
     /*
         https://restful-booker.herokuapp.com/booking/10 url’ine
