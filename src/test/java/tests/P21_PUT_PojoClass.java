@@ -1,6 +1,6 @@
 package tests;
 
-public class P21_PUT_pojoClass {
+public class P21_PUT_PojoClass {
 
     /*
 
