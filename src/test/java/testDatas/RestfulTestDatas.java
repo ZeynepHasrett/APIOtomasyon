@@ -2,6 +2,9 @@ package testDatas;
 
 import org.json.JSONObject;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class RestfulTestDatas {
 
     public static JSONObject bookingDatesOlustur() {
@@ -55,6 +58,28 @@ public class RestfulTestDatas {
         expData.put("booking", requestBodyOlusturJSON());
 
         return expData;
+    }
+
+    public static Map<String, Object> bookingDatesOlusturMap() {
+
+        Map<String, Object> bookingdates = new HashMap<>();
+        bookingdates.put("checkin", "2021-06-01");
+        bookingdates.put("checkout", "2021-06-10");
+
+        return bookingdates;
+    }
+
+    public static Map<String, Object> requestBodyOlusturMap() {
+
+        Map<String, Object> reqBody = new HashMap<>();
+        reqBody.put("firstname", "Ahmet");
+        reqBody.put("lastname", "Bulut");
+        reqBody.put("totalprice", 500.0);
+        reqBody.put("depositpaid", false);
+        reqBody.put("bookingdates", bookingDatesOlusturMap());
+        reqBody.put("additionalneeds", "wi-fi");
+
+        return reqBody;
     }
 
 }
