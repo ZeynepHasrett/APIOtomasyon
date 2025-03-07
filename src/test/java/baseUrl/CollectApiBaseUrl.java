@@ -4,15 +4,15 @@ import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.specification.RequestSpecification;
 import org.testng.annotations.BeforeTest;
 
-public class OpenWeatherBaseUrl {
+public class CollectApiBaseUrl {
 
-    protected RequestSpecification specOpenWeatherBaseUrl;
+    protected RequestSpecification specCollectApi;
 
     @BeforeTest
     public void setup(){
 
-        specOpenWeatherBaseUrl = new RequestSpecBuilder()
-                                            .setBaseUri("https://api.openweathermap.org")
+        specCollectApi = new RequestSpecBuilder()
+                                            .setBaseUri("https://api.collectapi.com")
                                             .build();
 
     }
